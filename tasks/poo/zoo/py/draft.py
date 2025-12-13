@@ -37,3 +37,21 @@ class Cobra(Animal):
     def mover(self):
         print("rastejando")
 
+def apresentar(animal: Animal):
+    animal.apresentar_nome()
+    animal.fazer_som()
+    animal.mover()
+    print("Tipo:", type (animal).__name__)
+    print()
+
+def main():
+    animais:list[Animal]=[
+        leao("simba"),
+        Elefante("dumbo"),
+        Cobra("cascavel")
+    ]
+    for a in animais:
+       apresentar(a)
+
+main()
+
