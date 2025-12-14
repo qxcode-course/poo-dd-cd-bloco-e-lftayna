@@ -19,6 +19,7 @@ class Pagamento(ABC):
 
 class CartaoCredito(Pagamento):
     def __init__(self, num: int, nome:str, limite: float, valor: float, descricao: str):
+        super().__init__(valor, descricao)
         self.num: int = num
         self.nome: str = nome
         self.limite: float = limite
@@ -54,7 +55,7 @@ class Boleto(Pagamento):
         print("boleto gerado. Aguardando pagamento...")
         print(f"Codigo: {self.__codigobarras} | Vencimento: {self.__vencimento}")
 
-    def processar_pagamento(pagamento: list [Pagamento]):
+def processar_pagamento(pagamento: list [Pagamento]):
         for x in pagamentos:
             x.validar_valor()
             print(x.resumo())
@@ -62,5 +63,8 @@ class Boleto(Pagamento):
             if isinstance(x, CartaoCredito):
                 print(x.getlimite())
 
-
- 
+pag1: Pagamento = CartaoCredito(nome = "David", descricao = "Coxinha", limite = 500.00, num = 123, valor = 0.50)
+pag2: Pagamento = Pix(valor = 20.0, descricao = "Comprar no pix", chave = "david@gmail.com", banco = "Nunbank")
+pag3: Pagamento = Boleto(valor = 150.0, descricao = "conta de luz", codigobarra = 18582, vencimento = "24/06/2025")
+pagamentos : list [Pagamento] = [pag1, pag2, pag3]
+processar_pagamento(pagamentos)
