@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-12-15_10-02-50",
+            "content": "@@ -43,16 +43,21 @@\n  Animal(\n+abc, \n ABC):%0A  \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-12-15_10-03-17",
+            "content": "@@ -977,17 +977,17 @@\n         \n-L\n+l\n eao(%22sim\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-12-15_10-03-43",
+            "content": "@@ -186,17 +186,17 @@\n self.__n\n-o\n+a\n me%7D%22)%0A%0Ac\n@@ -910,17 +910,17 @@\n mal).__n\n-o\n+a\n me__)%0A  \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-12-15_10-04-48",
+            "content": "@@ -910,17 +910,17 @@\n mal).__n\n-a\n+o\n me__)%0A  \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-12-15_10-07-07",
+            "content": "from abc import ABC, abstractmethod\n\nclass Animal(ABC):\n    def __init__(self, nome: str):\n        self.__nome: str = nome\n\n    def apresentar_nome(self):\n        print(f\"Eu sou um(a) {self.__nome}\")\n\nclass Leao(Animal):\n    def __init__(self, nome: str):\n        super().__init__(nome)\n\n    def fazer_som(self):\n        print(f\"roar\")\n    \n    def mover(self):\n        print(\"andando\")\n\nclass Elefante(Animal):\n    def __init__(self, nome: str):\n        super().__init__(nome)\n\n    def fazer_som(self):\n        print(\"afruuuuu\")\n    \n    def mover(self):\n        print(\"pisando\")\n\nclass Cobra(Animal):\n    def __init__(self, nome: str):\n        super().__init__(nome)\n\n    def fazer_som(self):\n        print(\"pspspspsps\")\n    \n    def mover(self):\n        print(\"rastejando\")\n\ndef apresentar(animal: Animal):\n    animal.apresentar_nome()\n    animal.fazer_som()\n    animal.mover()\n    print(\"Tipo:\", type (animal).__name__)\n    print()\n\ndef main():\n    animais:list[Animal]=[\n        Leao(\"simba\"),\n        Elefante(\"dumbo\"),\n        Cobra(\"cascavel\")\n    ]\n    for a in animais:\n       apresentar(a)\n\nmain()\n\n",
+            "lines": "57"
+        }
+    ]
+}

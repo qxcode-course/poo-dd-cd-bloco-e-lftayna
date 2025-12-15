@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
 
-class Animal(abc, ABC):
+class Animal(ABC):
     def __init__(self, nome: str):
         self.__nome: str = nome
 
     def apresentar_nome(self):
-        print(f"Eu sou um(a) {self.__name}")
+        print(f"Eu sou um(a) {self.__nome}")
 
 class Leao(Animal):
     def __init__(self, nome: str):
@@ -46,7 +46,7 @@ def apresentar(animal: Animal):
 
 def main():
     animais:list[Animal]=[
-        leao("simba"),
+        Leao("simba"),
         Elefante("dumbo"),
         Cobra("cascavel")
     ]
